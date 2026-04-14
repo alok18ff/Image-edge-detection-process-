@@ -1,0 +1,37 @@
+clc;
+clear all;
+img = imread('');
+
+gray = rgb2gray(img);
+subplot(3,2,1);
+imshow(gray);
+
+edges = edge(gray, 'Canny');
+subplot(3,2,2);
+imshow(edges);
+title('Canny Image');
+
+subplot(3,2,3);
+edges1 = edge(gray, 'Sobel');
+imshow(edges1);
+title('Sobel Image');
+
+subplot(3,2,4);
+edges2 = edge(gray, 'Prewitt');
+imshow(edges2);
+title('Prewitt Image');
+
+subplot(3,2,5);
+edges3 = edge(gray, 'Roberts');
+imshow(edges3);
+title('Roberts Image');
+
+subplot(3,2,6);
+edges4 = edge(gray, 'log');
+imshow(edges4);
+title('Log Image');
+
+subplot(3,2,7);
+edges5 = edge(gray, 'zerocross');
+imshow(edges5);
+title('Zero Cross Image');
